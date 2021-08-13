@@ -55,7 +55,6 @@ For example, if the number is 123 and you pick 135, the computer will say: You h
 computer_guess = [0]
 while computer_guess[0] == 0:
     computer_guess = random.sample(range(0, 10), digits)
-print(computer_guess)
 
 # user guesses and computer checks against answer
 while True:
