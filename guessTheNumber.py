@@ -82,4 +82,8 @@ while True:
             correct_digits = list(i for i in computer_guess if i in guess)
             num_correct_digits = len(correct_digits)
             print(f"You have correctly guessed {num_correct_digits} digits.")
-            break
+            #find number of digits in correct location
+            correct_places = list(i for i, j in zip(computer_guess, guess) if i == j)
+            num_correct_places = len(correct_places)
+            print(f"You have guessed {num_correct_places} digits in the correct place.")
+            print("Try again!")
