@@ -1,3 +1,5 @@
+import random
+
 print("The Number Guessing Game")
 print()
 
@@ -48,6 +50,10 @@ For example, if the number is 123 and you pick 135, the computer will say: You h
 5. Game ends once you've picked the correct number. Good luck!
 """)
 
+#computer picks the number
+computer_guess = random.sample(range(1, 9), 1) + random.sample(range(0, 9), digits-1)
+#print(computer_guess)
+
 #time to play!
 while True:
     print()
@@ -60,4 +66,8 @@ while True:
         print("You did not enter a correctly-sized guess. Try again.")
         continue
     else:
-        guess = int(guess)
+        guess = guess.split()
+        if (guess == computer_guess):
+            print(f"Congrats, you've won! The correct number is {computer_guess}! Great work!!")
+            break
+        
