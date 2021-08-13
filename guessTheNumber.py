@@ -50,10 +50,13 @@ For example, if the number is 123 and you pick 135, the computer will say: You h
 5. Game ends once you've picked the correct number. Good luck!
 """)
 
-#computer picks the number
-computer_guess = random.sample(range(1, 9), 1) + random.sample(range(0, 9), digits-1)
-#print(computer_guess)
+#computer picks the number - no zero as first digit
+computer_guess = [0]
+while computer_guess[0] == 0:
+    computer_guess = random.sample(range(0, 10), digits)
+print(computer_guess)
 
+'''
 #time to play!
 while True:
     print()
@@ -70,4 +73,4 @@ while True:
         if (guess == computer_guess):
             print(f"Congrats, you've won! The correct number is {computer_guess}! Great work!!")
             break
-        
+'''        
