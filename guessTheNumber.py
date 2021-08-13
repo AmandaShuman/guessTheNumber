@@ -8,15 +8,33 @@ while True:
     else:
         digits = int(digits)
         if (3 <= digits <= 8):
-            #add specific cases for 3 - 8 to make it easier for user to see between what numbers they need to guess.
-            print(f"You have chosen to guess a random number that contains {digits} digits.")
-            break
+            print()
+            print(f"You have chosen {digits} digits.")
+            if (digits == 3):
+                print("You will guess a number between 100 and 999.")
+                break
+            elif (digits == 4):
+                print("You will guess a number between 1000 and 9999.")
+                break
+            elif (digits == 5):
+                print("You will guess a number between 10,000 and 99,999.")
+                break
+            elif (digits == 6):
+                print("You will guess a number between 100,000 and 999,000.")
+                break
+            elif (digits == 7):
+                print("You will guess a number between 1,000,000 and 9,999,999.")
+                break
+            else:
+                print("You will guess a number between 10,000,000 and 99,999,999.")
+                break
         else:
             print("You did not choose a number between 3 and 8. Try again.")
 
 #rules of the game
+print()
+print("Now that the computer has its number, here are the rules.")
 print("""
-Now that the computer has its number, here are the rules.
 1. The first number cannot be a zero.
 2. No digit can be repeated. 
 For example, the computer would never pick 1221 or 1231 as the same number shows up more than once.
