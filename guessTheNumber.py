@@ -1,4 +1,7 @@
 print("The Number Guessing Game")
+print()
+
+#Asking user how big of a number they want to guess
 while True:
     print()
     digits = input("Enter the size of the number you want to guess - must be between 3 and 8 digits long (bigger numbers are harder to guess):   ")
@@ -44,3 +47,17 @@ Don't guess 1234 if you wanted the computer to have a 3 digit number.
 For example, if the number is 123 and you pick 135, the computer will say: You have 2 correct numbers and 1 number in the correct location.
 5. Game ends once you've picked the correct number. Good luck!
 """)
+
+#time to play!
+while True:
+    print()
+    guess = input(
+        "Enter your guess:   ")
+    if (not(guess.isnumeric())):
+        print("You didn't enter a number. Try again.")
+        continue
+    elif (len(guess) != digits):
+        print("You did not enter a correctly-sized guess. Try again.")
+        continue
+    else:
+        guess = int(guess)
