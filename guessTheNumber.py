@@ -56,9 +56,13 @@ computer_guess = [0]
 while computer_guess[0] == 0:
     computer_guess = random.sample(range(0, 10), digits)
 
+#score & number of tries
+score = 200
+num_guesses = 0
+
 # user guesses and computer checks against answer
 while True:
-    print()
+    print(f"Score:   {score}       Guesses:    {num_guesses}")
     guess = input(
         "Enter your guess:   ")
     if (not(guess.isnumeric())):
@@ -86,3 +90,5 @@ while True:
             num_correct_places = len(correct_places)
             print(f"You have guessed {num_correct_places} digits in the correct place.")
             print("Try again!")
+            score -= 10
+            num_guesses += 1
