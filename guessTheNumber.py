@@ -9,26 +9,26 @@ while True:
     digits = input(
         "Enter the size of the number you want to guess - must be between 3 and 8 digits long (bigger numbers are harder to guess):   ")
 
-    if (not(digits.isnumeric())):
+    if not(digits.isnumeric()):
         print("You didn't enter a number. Try again.")
     else:
         digits = int(digits)
-        if (3 <= digits <= 8):
+        if 3 <= digits <= 8:
             print()
             print(f"You have chosen {digits} digits.")
-            if (digits == 3):
+            if digits == 3:
                 print("You will guess a number between 100 and 999.")
                 break
-            elif (digits == 4):
+            elif digits == 4:
                 print("You will guess a number between 1000 and 9999.")
                 break
-            elif (digits == 5):
+            elif digits == 5:
                 print("You will guess a number between 10,000 and 99,999.")
                 break
-            elif (digits == 6):
+            elif digits == 6:
                 print("You will guess a number between 100,000 and 999,000.")
                 break
-            elif (digits == 7):
+            elif digits == 7:
                 print("You will guess a number between 1,000,000 and 9,999,999.")
                 break
             else:
@@ -65,16 +65,16 @@ while True:
     print(f"Score:   {score}       Guesses:    {num_guesses}")
     guess = input(
         "Enter your guess:   ")
-    if (not(guess.isnumeric())):
+    if not(guess.isnumeric()):
         print("You didn't enter a number. Try again.")
         continue
-    elif (len(guess) != digits):
+    elif len(guess) != digits:
         print("You did not enter a correctly-sized guess. Try again.")
         continue
     else:
         guess = list(guess) #puts string into list of strings
         guess = [int(i) for i in guess] #converts str to int
-        if (guess == computer_guess):
+        if guess == computer_guess:
             computer_guess = [str(i) for i in computer_guess] #converts int to str
             computer_guess = str("".join(computer_guess)) #joins all ints 
             print(
